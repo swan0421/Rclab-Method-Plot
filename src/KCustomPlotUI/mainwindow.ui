@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>956</width>
+    <height>732</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>931</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QCustomPlot" name="Widget_Plot_1" native="true">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>60</y>
+        <width>531</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Frequency">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>64</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Frequency</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_FrequencyValue">
+      <property name="geometry">
+       <rect>
+        <x>628</x>
+        <y>90</y>
+        <width>108</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StructureReset">
+      <property name="geometry">
+       <rect>
+        <x>627</x>
+        <y>160</y>
+        <width>110</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_DataSetting">
+      <property name="geometry">
+       <rect>
+        <x>627</x>
+        <y>120</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Color">
+      <property name="geometry">
+       <rect>
+        <x>833</x>
+        <y>65</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StartTimer">
+      <property name="geometry">
+       <rect>
+        <x>629</x>
+        <y>19</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStart</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StopTimer">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>20</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStop</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RAP_Color">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>211</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="RAP">
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>213</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RAP</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RK_Color">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>181</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="RK">
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>183</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RK</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RHP_Color">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>151</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="RHP">
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>153</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RHP</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RHR_Color">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>121</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="RHR">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>123</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>RHR</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RHY_Color">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>91</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="RHY">
+      <property name="geometry">
+       <rect>
+        <x>741</x>
+        <y>93</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RHY</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="Widget_Plot_4" native="true">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>330</y>
+        <width>531</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="RAR">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>243</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RAR</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="RAR_Color">
+      <property name="geometry">
+       <rect>
+        <x>824</x>
+        <y>241</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="LHP">
+      <property name="geometry">
+       <rect>
+        <x>739</x>
+        <y>392</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LHP</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="LHP_Color">
+      <property name="geometry">
+       <rect>
+        <x>823</x>
+        <y>390</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="LK_Color">
+      <property name="geometry">
+       <rect>
+        <x>823</x>
+        <y>420</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="LHR">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>739</x>
+        <y>362</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>LHR</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="LHY">
+      <property name="geometry">
+       <rect>
+        <x>739</x>
+        <y>332</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LHY</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="LAR">
+      <property name="geometry">
+       <rect>
+        <x>738</x>
+        <y>482</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LAR</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="LAP">
+      <property name="geometry">
+       <rect>
+        <x>739</x>
+        <y>452</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LAP</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="LAR_Color">
+      <property name="geometry">
+       <rect>
+        <x>822</x>
+        <y>480</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="LHY_Color">
+      <property name="geometry">
+       <rect>
+        <x>823</x>
+        <y>330</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="LHR_Color">
+      <property name="geometry">
+       <rect>
+        <x>823</x>
+        <y>360</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="LK">
+      <property name="geometry">
+       <rect>
+        <x>739</x>
+        <y>422</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>LK</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="LAP_Color">
+      <property name="geometry">
+       <rect>
+        <x>823</x>
+        <y>450</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_DataSetting_2">
+      <property name="geometry">
+       <rect>
+        <x>677</x>
+        <y>92</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set</string>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="Widget_Plot_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>72</y>
+        <width>531</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Select_Color_8">
+      <property name="geometry">
+       <rect>
+        <x>737</x>
+        <y>215</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Select_Color_10">
+      <property name="geometry">
+       <rect>
+        <x>737</x>
+        <y>245</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_Frequency_2">
+      <property name="geometry">
+       <rect>
+        <x>607</x>
+        <y>67</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Frequency</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Select_Color_6">
+      <property name="geometry">
+       <rect>
+        <x>737</x>
+        <y>125</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Select_Color_9">
+      <property name="geometry">
+       <rect>
+        <x>737</x>
+        <y>185</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_FrequencyValue_2">
+      <property name="geometry">
+       <rect>
+        <x>558</x>
+        <y>93</y>
+        <width>109</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Select_Color_7">
+      <property name="geometry">
+       <rect>
+        <x>737</x>
+        <y>155</y>
+        <width>85</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_Color_2">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>100</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_DataSetting_FT">
+      <property name="geometry">
+       <rect>
+        <x>577</x>
+        <y>120</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="R_Fz_Color">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>90</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StructureReset_FT">
+      <property name="geometry">
+       <rect>
+        <x>577</x>
+        <y>160</y>
+        <width>110</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_FrequencyValue_FT">
+      <property name="geometry">
+       <rect>
+        <x>578</x>
+        <y>90</y>
+        <width>108</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="Widget_Plot_Footforce" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>531</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Color_FT">
+      <property name="geometry">
+       <rect>
+        <x>783</x>
+        <y>65</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="R_Fz">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>90</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>R_Fz</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StartTimer_FT">
+      <property name="geometry">
+       <rect>
+        <x>579</x>
+        <y>19</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStart</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Frequency_FT">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>64</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Frequency</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StopTimer_FT">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>20</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStop</string>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="Widget_Plot_Footmoment" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>330</y>
+        <width>531</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="L_My_Color">
+      <property name="geometry">
+       <rect>
+        <x>774</x>
+        <y>445</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="R_My_Color">
+      <property name="geometry">
+       <rect>
+        <x>774</x>
+        <y>355</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="R_My">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>357</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>R_My</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="L_My">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>447</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>L_My</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="L_Mx">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>417</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>L_Mx</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="R_Mx">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>327</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>R_Mx</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="L_Mx_Color">
+      <property name="geometry">
+       <rect>
+        <x>774</x>
+        <y>415</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="R_Mx_Color">
+      <property name="geometry">
+       <rect>
+        <x>774</x>
+        <y>325</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="L_Fz_Color">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>120</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentText">
+       <string>Black</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="L_Fz">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>120</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>L_Fz</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>956</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
