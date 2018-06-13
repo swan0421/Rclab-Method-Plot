@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1550,6 +1550,230 @@
       </property>
       <property name="checked">
        <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QCustomPlot" name="Widget_Plot_ZMPXgraph" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>531</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCustomPlot" name="Widget_Plot_ZMPYgraph" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>340</y>
+        <width>531</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StructureReset_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>583</x>
+        <y>151</y>
+        <width>110</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StopTimer_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>726</x>
+        <y>11</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStop</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_FrequencyValue_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>584</x>
+        <y>81</y>
+        <width>108</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_DataSetting_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>583</x>
+        <y>111</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ZMPX_Color">
+      <property name="geometry">
+       <rect>
+        <x>776</x>
+        <y>81</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="ZMPX">
+      <property name="geometry">
+       <rect>
+        <x>696</x>
+        <y>81</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ZMP X</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ZMPY_Color">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>340</y>
+        <width>75</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Black</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blue</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="ZMPY">
+      <property name="geometry">
+       <rect>
+        <x>696</x>
+        <y>342</y>
+        <width>78</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ZMP Y</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_StartTimer_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>585</x>
+        <y>10</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TimerStart</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Frequency_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>57</y>
+        <width>81</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Frequency</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Color_ZMP">
+      <property name="geometry">
+       <rect>
+        <x>793</x>
+        <y>58</y>
+        <width>67</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Color</string>
       </property>
      </widget>
     </widget>

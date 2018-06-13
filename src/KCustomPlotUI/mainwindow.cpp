@@ -88,6 +88,10 @@ bool MainWindow::InitializeObject() {
         qDebug() << "failed Initialize Plot";
         return false;
     }
+    if(this->InitializeTimer() == false) {
+        qDebug() << "Failed Initialize Valuables.";
+        return false;
+    }
     //↓↓↓↓↓↓↓↓↓↓Kookmin.univ
 
     if(this->InitializePlotForce() == false){
@@ -101,15 +105,24 @@ bool MainWindow::InitializeObject() {
     }
 
     if(this->InitializeTimerFT() == false) {
-        qDebug() << "Failed Initialize Valuables.";
+        qDebug() << "Failed Initialize FTValuables.";
         return false;
     }
-    //↑↑↑↑↑↑↑↑↑↑↑↑Kookmin.univ
-    if(this->InitializeTimer() == false) {
-        qDebug() << "Failed Initialize Valuables.";
+    if(this->InitializePlotZMPX() == false){
+        qDebug() << "failed Initialize PlotFT";
         return false;
     }
 
+    if(this->InitializePlotZMPY() == false){
+        qDebug() << "failed Initialize PlotFT";
+        return false;
+    }
+
+    if(this->InitializeTimerZMP() == false) {
+        qDebug() << "Failed Initialize FTValuables.";
+        return false;
+    }
+    //↑↑↑↑↑↑↑↑↑↑↑↑Kookmin.univ
     return true;
 }
 
@@ -151,14 +164,6 @@ bool MainWindow::InitializePlotTorque(){
 
     return m_pPlotMoment->SetObject((void*)ui->Widget_Plot_Footmoment);
 }
-//↑↑↑↑↑↑↑↑↑↑↑↑Kookmin.univ
-bool MainWindow::InitializeTimer()
-{
-    m_nTimerCount = 0;
-
-    m_pUpdatePlotTimer = new QTimer();
-    connect(m_pUpdatePlotTimer, SIGNAL(timeout()), this, SLOT(UpdatePlot()));
-}
 bool MainWindow::InitializeTimerFT()
 {
     m_nTimerCountFT = 0;
@@ -167,7 +172,41 @@ bool MainWindow::InitializeTimerFT()
     connect(m_pUpdatePlotTimerFT, SIGNAL(timeout()), this, SLOT(UpdatePlotFT()));
     return true;
 }
+bool MainWindow::InitializePlotZMPX(){
 
+    m_pPlotZMPX = new KCustomPlot();
+    if(m_pPlotZMPX == NULL){
+        return false;
+    }
+
+    return m_pPlotZMPX->SetObject((void*)ui->Widget_Plot_ZMPXgraph);
+}
+bool MainWindow::InitializePlotZMPY(){
+
+    m_pPlotZMPY = new KCustomPlot();
+    if(m_pPlotZMPY == NULL){
+        return false;
+    }
+
+    return m_pPlotZMPY->SetObject((void*)ui->Widget_Plot_ZMPYgraph);
+}
+bool MainWindow::InitializeTimerZMP()
+{
+    m_nTimerCountZMP = 0;
+
+    m_pUpdatePlotTimerZMP = new QTimer();
+    connect(m_pUpdatePlotTimerZMP, SIGNAL(timeout()), this, SLOT(UpdatePlotZMP()));
+    return true;
+}
+//↑↑↑↑↑↑↑↑↑↑↑↑Kookmin.univ
+bool MainWindow::InitializeTimer()
+{
+    m_nTimerCount = 0;
+
+    m_pUpdatePlotTimer = new QTimer();
+    connect(m_pUpdatePlotTimer, SIGNAL(timeout()), this, SLOT(UpdatePlot()));
+    return true;
+}
 void MainWindow::UpdatePlot()
 {
     //Test Set Data
@@ -451,24 +490,24 @@ void MainWindow::on_pushButton_StructureReset_clicked()
 
 //↓↓↓↓↓↓↓↓↓↓Kookmin.univ
 
-void MainWindow::UpdatePlotFT()
+void MainWindow::UpdatePlotFT()//FTsensor,Kookmin.univ
 {
     //Test Set Data
 //    this->SetDummyData();
 
     if(m_pPlotForce != NULL){
 
-        m_pPlotForce->SetData(R_F_Z, _pSIMData->sensored_data.ft_sensor.ft_data[RIGHT_FOOT].fz);
-        m_pPlotForce->SetData(L_F_Z, _pSIMData->sensored_data.ft_sensor.ft_data[LEFT_FOOT].fz);
+        m_pPlotForce->SetData(R_F_Z, _pSIMData->control_data.target_data[2]);
+        m_pPlotForce->SetData(L_F_Z, _pSIMData->control_data.target_data[3]);
 
         m_pPlotForce->UpdateGraph();
     }
     if(m_pPlotMoment != NULL){
-        m_pPlotMoment->SetData(R_M_X, _pSIMData->sensored_data.ft_sensor.ft_data[RIGHT_FOOT].tx);
-        m_pPlotMoment->SetData(R_M_Y, _pSIMData->sensored_data.ft_sensor.ft_data[RIGHT_FOOT].ty);
+        m_pPlotMoment->SetData(R_M_X, _pSIMData->control_data.target_data[6]);
+        m_pPlotMoment->SetData(R_M_Y, _pSIMData->control_data.target_data[8]);
 
-        m_pPlotMoment->SetData(L_M_X, _pSIMData->sensored_data.ft_sensor.ft_data[LEFT_FOOT].tx);
-        m_pPlotMoment->SetData(L_M_Y, _pSIMData->sensored_data.ft_sensor.ft_data[LEFT_FOOT].ty);
+        m_pPlotMoment->SetData(L_M_X, _pSIMData->control_data.target_data[5]);
+        m_pPlotMoment->SetData(L_M_Y, _pSIMData->control_data.target_data[7]);
 
         m_pPlotMoment->UpdateGraph();
     }
@@ -476,7 +515,7 @@ void MainWindow::UpdatePlotFT()
     m_nTimerCountFT++;
 }
 
-void MainWindow::on_pushButton_DataSetting_FT_clicked()
+void MainWindow::on_pushButton_DataSetting_FT_clicked()//FTsensor,Kookmin.univ
 {
     double value = ui->lineEdit_FrequencyValue_FT->text().toDouble();
     if(m_pPlotForce != NULL){
@@ -488,7 +527,7 @@ void MainWindow::on_pushButton_DataSetting_FT_clicked()
 }
 
 
-void MainWindow::on_pushButton_StartTimer_FT_clicked()
+void MainWindow::on_pushButton_StartTimer_FT_clicked()//FTsensor,Kookmin.univ
 {
     if(m_pPlotForce != NULL){
         m_pPlotForce->SetTimerEnabled(true);
@@ -500,7 +539,7 @@ void MainWindow::on_pushButton_StartTimer_FT_clicked()
     m_pUpdatePlotTimerFT->start(10);
 }
 
-void MainWindow::on_pushButton_StopTimer_FT_clicked()
+void MainWindow::on_pushButton_StopTimer_FT_clicked()//FTsensor,Kookmin.univ
 {
     if(m_pPlotForce != NULL){
         m_pPlotForce->SetTimerEnabled(false);
@@ -511,21 +550,21 @@ void MainWindow::on_pushButton_StopTimer_FT_clicked()
     m_pUpdatePlotTimerFT->stop();
 }
 
-void MainWindow::on_R_Fz_Color_highlighted(int color)
+void MainWindow::on_R_Fz_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotForce != NULL){
     m_pPlotForce->SetColor(R_F_Z, color);
     }
 }
 
-void MainWindow::on_L_Fz_Color_highlighted(int color)
+void MainWindow::on_L_Fz_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotForce != NULL){
     m_pPlotForce->SetColor(L_F_Z, color);
     }
 }
 
-void MainWindow::on_R_Fz_clicked()
+void MainWindow::on_R_Fz_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->R_Fz->isChecked();
     if(m_pPlotForce != NULL){
@@ -533,7 +572,7 @@ void MainWindow::on_R_Fz_clicked()
     }
 }
 
-void MainWindow::on_L_Fz_clicked()
+void MainWindow::on_L_Fz_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->L_Fz->isChecked();
     if(m_pPlotForce != NULL){
@@ -541,33 +580,33 @@ void MainWindow::on_L_Fz_clicked()
     }
 }
 
-void MainWindow::on_R_Mx_Color_highlighted(int color)
+void MainWindow::on_R_Mx_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotMoment != NULL){
     m_pPlotMoment->SetColor(R_M_X, color);
     }
 }
-void MainWindow::on_R_My_Color_highlighted(int color)
+void MainWindow::on_R_My_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotMoment != NULL){
     m_pPlotMoment->SetColor(R_M_Y, color);
     }
 }
 
-void MainWindow::on_L_Mx_Color_highlighted(int color)
+void MainWindow::on_L_Mx_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotMoment != NULL){
     m_pPlotMoment->SetColor(L_M_X, color);
     }
 }
-void MainWindow::on_L_My_Color_highlighted(int color)
+void MainWindow::on_L_My_Color_highlighted(int color)//FTsensor,Kookmin.univ
 {
     if(m_pPlotMoment != NULL){
     m_pPlotMoment->SetColor(L_M_Y, color);
     }
 }
 
-void MainWindow::on_R_Mx_clicked()
+void MainWindow::on_R_Mx_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->R_Mx->isChecked();
     if(m_pPlotMoment != NULL){
@@ -575,7 +614,7 @@ void MainWindow::on_R_Mx_clicked()
     }
 }
 
-void MainWindow::on_R_My_clicked()
+void MainWindow::on_R_My_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->R_My->isChecked();
     if(m_pPlotMoment != NULL){
@@ -583,7 +622,7 @@ void MainWindow::on_R_My_clicked()
     }
 }
 
-void MainWindow::on_L_Mx_clicked()
+void MainWindow::on_L_Mx_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->L_Mx->isChecked();
     if(m_pPlotMoment != NULL){
@@ -591,7 +630,7 @@ void MainWindow::on_L_Mx_clicked()
     }
 }
 
-void MainWindow::on_L_My_clicked()
+void MainWindow::on_L_My_clicked()//FTsensor,Kookmin.univ
 {
     bool bResult = ui->L_My->isChecked();
     if(m_pPlotMoment != NULL){
@@ -599,13 +638,111 @@ void MainWindow::on_L_My_clicked()
     }
 }
 
-void MainWindow::on_pushButton_StructureReset_FT_clicked()
+void MainWindow::on_pushButton_StructureReset_FT_clicked()//FTsensor,Kookmin.univ
 {
     if(m_pPlotForce != NULL){
         m_pPlotForce->ClearData();
     }
     if(m_pPlotMoment != NULL){
         m_pPlotMoment->ClearData();
+    }
+}
+
+
+
+
+void MainWindow::UpdatePlotZMP()//ZMP,Kookmin.univ
+{
+    //Test Set Data
+//    this->SetDummyData();
+
+    if(m_pPlotZMPX != NULL){
+
+        m_pPlotZMPX->SetData(ZMP_X, _pSIMData->control_data.target_data[9]);
+
+        m_pPlotZMPX->UpdateGraph();
+    }
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->SetData(ZMP_Y, _pSIMData->control_data.target_data[10]);
+
+        m_pPlotZMPY->UpdateGraph();
+    }
+
+    m_nTimerCountZMP++;
+}
+
+void MainWindow::on_pushButton_DataSetting_ZMP_clicked()//ZMP,Kookmin.univ
+{
+    double value = ui->lineEdit_FrequencyValue_ZMP->text().toDouble();
+    if(m_pPlotZMPX != NULL){
+        m_pPlotZMPX->SetFrequency(value);
+    }
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->SetFrequency(value);
+    }
+}
+
+
+void MainWindow::on_pushButton_StartTimer_ZMP_clicked()//ZMP,Kookmin.univ
+{
+    if(m_pPlotZMPX != NULL){
+        m_pPlotZMPX->SetTimerEnabled(true);
+    }
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->SetTimerEnabled(true);
+    }
+
+    m_pUpdatePlotTimerZMP->start(10);
+}
+
+void MainWindow::on_pushButton_StopTimer_ZMP_clicked()//ZMP,Kookmin.univ
+{
+    if(m_pPlotZMPX != NULL){
+        m_pPlotZMPX->SetTimerEnabled(false);
+    }
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->SetTimerEnabled(false);
+    }
+    m_pUpdatePlotTimerZMP->stop();
+}
+
+void MainWindow::on_ZMPX_Color_highlighted(int color)//ZMP,Kookmin.univ
+{
+    if(m_pPlotZMPX != NULL){
+    m_pPlotZMPX->SetColor(ZMP_X, color);
+    }
+}
+
+void MainWindow::on_ZMPY_Color_highlighted(int color)//ZMP,Kookmin.univ
+{
+    if(m_pPlotZMPY != NULL){
+    m_pPlotZMPY->SetColor(ZMP_Y, color);
+    }
+}
+
+void MainWindow::on_ZMPX_clicked()//ZMP,Kookmin.univ
+{
+    bool bResult = ui->ZMPX->isChecked();
+    if(m_pPlotZMPX != NULL){
+        m_pPlotZMPX->SetVisible(ZMP_X, bResult);
+    }
+}
+
+void MainWindow::on_ZMPY_clicked()//ZMP,Kookmin.univ
+{
+    bool bResult = ui->ZMPY->isChecked();
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->SetVisible(ZMP_Y, bResult);
+    }
+}
+
+void MainWindow::on_pushButton_StructureReset_ZMP_clicked()//ZMP,Kookmin.univ
+{
+    if(m_pPlotZMPX != NULL){
+        m_pPlotZMPX->ClearData();
+    }
+    if(m_pPlotZMPY != NULL){
+        m_pPlotZMPY->ClearData();
     }
 }
 //↑↑↑↑↑↑↑↑↑↑↑↑Kookmin.univ
